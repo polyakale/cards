@@ -1,0 +1,50 @@
+.bg {
+    background: rgb(158, 158, 158);
+}
+
+.my-text {
+    font-family: Georgia;
+}
+
+.the-title {
+    font-weight: bold;
+    text-align: center;
+}
+
+.search-label {
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.my-menu {
+    font-size: 23px;
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: bold !important;
+}
+
+span {
+    font-size: 18px;
+}
+
+input {
+    margin-left: 4px !important;
+    border: 3px inset goldenrod !important;
+    background: rgb(158, 158, 158) !important;
+}
+
+.my-border {
+    margin-top: 12px;
+    border-left: none;
+    border: 3px groove navy;
+}
+
+table,
+th,
+td {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid!important;
+}
