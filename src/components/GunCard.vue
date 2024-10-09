@@ -19,7 +19,7 @@ export default {
   props: ["id"],
   methods: {
     onClickDetails() {
-      this.$emit("detailsModalHandler", { id: this.id });
+      this.$emit("detailsModalHandling", { id: this.id });
     },
   },
 };

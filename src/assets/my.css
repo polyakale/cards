@@ -2,21 +2,18 @@
     font-weight: bold;
     text-align: center;
 }
-
-.bg {
-    background: rgb(158, 158, 158);
-}
-
 h2 {
     font-weight: bold !important;
 }
-
 .my-text {
     font-family: Georgia;
 }
-
 span {
     font-size: 18px;
+}
+
+.bg {
+    background: rgb(158, 158, 158);
 }
 
 .search-label {
@@ -28,18 +25,30 @@ span {
     font-size: 23px;
     font-weight: bold;
 }
+a {
+    color: rgb(250, 188, 30)!important;
+    text-decoration: none!important;
+}
+a:hover {
+    color: rgba(250, 188, 30,.75)!important;
+}
 
 
 input {
     margin-left: 4px !important;
     border: 3px inset goldenrod !important;
-    background: rgb(158, 158, 158) !important;
+    background: gray!important;
 }
 
 .my-border {
-    margin-top: 12px;
-    border-left: none !important;
+    margin: 12px 0;
+    border-left: none!important;
     border: 3px groove navy;
+    background: gray;
+}
+
+.my-modal {
+    
 }
 
 /* Table */
@@ -48,47 +57,66 @@ table {
     border-collapse: collapse;
     background: rgb(202, 189, 166);
 }
-
 table,
 th,
 td {
     padding: 15px;
     text-align: center;
-    border: 1px solid !important;
+    border: 2px solid black!important;
 }
-
 th,
 td {
     padding: 10px;
     text-align: center;
 }
-
 .table-header {
     font-family: 'Courier New';
     font-size: 20px;
 
 }
-
 .table-body {
     font-family: 'Courier New', monospace;
     font-size: 18px;
 }
-
 .table-image {
-    max-height: 125px;
-    max-width: 280px;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s;
+    height: 140px;
+    width: 250px;
+    transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
 }
-
 .table-image:hover {
-    cursor: pointer;
+    outline: 4px solid rgba(0, 0, 0, 0.719);
     transform: scale(1.05);
+    cursor: pointer;
+    opacity: 0.75;
 }
-
+.table-image:not(:hover) {
+    transition: transform 0.75s ease-in-out, outline 1s, opacity 0.8s;
+    outline: 4px solid transparent;
+    opacity: 1;
+}
+/* Card */
+.card {
+    transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
+    border: 4px groove goldenrod!important;
+    font-family: 'Courier New', monospace;
+    background: black!important;
+    color: white !important;
+    display: flex;
+    width: 300px;
+}
+.card:hover {
+    border: 4px double rgba(224, 191, 0, 0.63)!important;
+    outline: 5px solid rgba(0, 0, 0, 0.295);
+    transform: translateY(-4px);
+    color: yellow!important;
+    opacity: 0.8;
+}
+.card:not(:hover) {
+    transition: transform 0.75s ease-in-out, outline 1s, opacity 0.8s;
+    outline: 5px solid transparent;
+    opacity: 1;
+}
 .card-image {
-    border: 1px solid goldenrod !important;
-    border-radius: 5px;
-    margin: 0 10px 0 0 !important;
+    height: 170px;
+    width: 100%;
 }
