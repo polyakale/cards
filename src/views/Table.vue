@@ -1,13 +1,13 @@
 <template>
-  <GunsInfo
+  <GunsTable
   />
 </template>
 
 <script>
-import GunsInfo from '../components/GunsInfo.vue';
+import GunsTable from '../components/GunsTable.vue';
 export default {
   components:  {
-    GunsInfo
+    GunsTable
   }
 };
 </script>

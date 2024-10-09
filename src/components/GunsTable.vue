@@ -18,7 +18,10 @@
             <tbody class="table-body">
                 <tr v-for="gun in guns" :key="gun.id">
                     <td>{{ gun.id }}</td>
-                    <td><img class="table-image" :src="gun.image" alt="gun"></td>
+                    <td><img class="table-image" :src="gun.image" alt="gun"
+                        @click="onClickGunInfoModal()"    
+                    >
+                    </td>
                     <td>{{ gun.name }}</td>
                     <td>{{ gun.type }}</td>
                     <td>{{ gun.placeOfOrigin }}</td>

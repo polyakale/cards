@@ -12,7 +12,7 @@ const router = createRouter({
     {
       path: '/gunstable',
       name: 'gunstable',
-      component: () => import('../views/GunsTable.vue'),
+      component: () => import('../views/Table.vue'),
     },
     {
       path: '/guncards',
