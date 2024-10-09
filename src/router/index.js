@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/guncards',
       name: 'guncards',
-      component: () => import('../views/GunCards.vue'),
+      component: () => import('../views/Card.vue'),
     },
   ]
 })

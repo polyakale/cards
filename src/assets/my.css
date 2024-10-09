@@ -10,9 +10,11 @@
 h2 {
     font-weight: bold !important;
 }
+
 .my-text {
     font-family: Georgia;
 }
+
 span {
     font-size: 18px;
 }
@@ -21,6 +23,7 @@ span {
     font-size: 21px;
     font-weight: bold;
 }
+
 .my-menu {
     font-size: 23px;
     font-weight: bold;
@@ -38,12 +41,14 @@ input {
     border-left: none !important;
     border: 3px groove navy;
 }
+
 /* Table */
 table {
     width: 100%;
     border-collapse: collapse;
     background: rgb(202, 189, 166);
 }
+
 table,
 th,
 td {
@@ -51,27 +56,39 @@ td {
     text-align: center;
     border: 1px solid !important;
 }
-th, td {
+
+th,
+td {
     padding: 10px;
     text-align: center;
 }
+
 .table-header {
     font-family: 'Courier New';
     font-size: 20px;
-    
+
 }
+
 .table-body {
-    font-family: 'Courier New';
+    font-family: 'Courier New', monospace;
     font-size: 18px;
 }
+
 .table-image {
     max-height: 125px;
     max-width: 280px;
     display: block;
     margin: 0 auto;
-}
-.table-image:hover {
-    cursor: pointer;
-    text-shadow: 15px solid greenyellow;
+    transition: transform 0.3s;
 }
 
+.table-image:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card-image {
+    border: 1px solid goldenrod !important;
+    border-radius: 5px;
+    margin: 0 10px 0 0 !important;
+}
