@@ -19,13 +19,8 @@
         <td>{{ gun.id }}</td>
         <td>{{ gun.name }}</td>
         <td>
-          <img
-            class="table-image"
-            :src="gun.image"
-            :alt="gun.name"
-            data-bs-toggle="modal"
-            data-bs-target="#gunModal"
-          />
+          <img class="table-image" :src="gun.image" :alt="gun.name" data-bs-toggle="modal" data-bs-target="#gunModal"
+            @click="onClickDetails(gun.id)" />
         </td>
         <td>{{ gun.type }}</td>
         <td>{{ gun.placeOfOrigin }}</td>
@@ -38,41 +33,13 @@
   </table>
 
   <GunModal v-if="selectedGun" :name="selectedGun.name">
-    <img
-      :src="selectedGun.image"
-      :alt="selectedGun.name"
-      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 card-image"
-    />
+    <img :src="selectedGun.image" :alt="selectedGun.name"
+      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 card-image" />
     <div v-html="descFormat"></div>
   </GunModal>
 </template>
 
 <script>
-class Gun {
-  constructor(
-    id = 0,
-    image = null,
-    name = null,
-    type = null,
-    placeOfOrigin = null,
-    designer = null,
-    designed = 0,
-    cartridge = null,
-    muzzleVelocity = null,
-    description = []
-  ) {
-    this.id = id;
-    this.image = image;
-    this.name = name;
-    this.type = type;
-    this.placeOfOrigin = placeOfOrigin;
-    this.designer = designer;
-    this.designed = designed;
-    this.cartridge = cartridge;
-    this.muzzleVelocity = muzzleVelocity;
-    this.description = description;
-  }
-}
 import GunModal from "../components/GunModal.vue";
 export default {
   components: {
@@ -80,7 +47,7 @@ export default {
   },
   data() {
     return {
-      selectedGun: new Gun(),
+      selectedGun: null,
       guns: [
         {
           id: 1,
@@ -432,9 +399,14 @@ export default {
   },
   computed: {
     descFormat() {
-      return this.selectedGun.description && this.selectedGun.description.length
+      return this.selectedGun && this.selectedGun.description.length
         ? this.selectedGun.description.map((d) => `<p>${d}</p>`).join("")
         : `<p>No description available</p>`;
+    },
+  },
+  methods: {
+    onClickDetails(gunId) {
+      this.selectedGun = this.guns.find(gun => gun.id === gunId);
     },
   },
 };

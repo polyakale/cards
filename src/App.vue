@@ -1,13 +1,6 @@
-<script>
-import { RouterLink, RouterView } from "vue-router";
-export default {};
-</script>
-
 <template>
   <div class="container-fluid">
-    <nav
-      class="my-border p-4 d-flex justify-content-between align-items-center"
-    >
+    <nav class="my-border p-4 d-flex justify-content-between align-items-center">
       <!-- Menu -->
       <div class="my-menu">
         <RouterLink to="/">Home</RouterLink> |
@@ -16,15 +9,8 @@ export default {};
       </div>
       <!-- Search -->
       <div class="d-flex align-items-center" role="search">
-        <label class="search-label form-label text-nowrap m-0"
-          >Searcher:
-        </label>
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
+        <label class="search-label form-label text-nowrap m-0">Searcher:</label>
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-success" type="submit">Search</button>
       </div>
     </nav>
@@ -34,5 +20,11 @@ export default {};
     <RouterView />
   </div>
 </template>
+
+<script>
+import { RouterLink, RouterView } from "vue-router";
+
+export default {};
+</script>
 
 <style scoped></style>

@@ -120,3 +120,13 @@ td {
     height: 170px;
     width: 100%;
 }
+/* Responsive Design (Example) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+
+    .table-image {
+        width: 100%; /* Adjust table images to be responsive */
+    }
+}
