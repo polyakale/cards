@@ -1,40 +1,42 @@
 <template>
   <h2>Guns Table</h2>
-  <table>
-    <thead class="table-header">
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Image</th>
-        <th>Type</th>
-        <th>Place of Origin</th>
-        <th>Designer</th>
-        <th>Designed</th>
-        <th>Cartridge</th>
-        <th>Muzzle Velocity</th>
-      </tr>
-    </thead>
-    <tbody class="table-body">
-      <tr v-for="gun in guns" :key="gun.id">
-        <td>{{ gun.id }}</td>
-        <td>{{ gun.name }}</td>
-        <td>
-          <img class="table-image" :src="gun.image" :alt="gun.name" data-bs-toggle="modal" data-bs-target="#gunModal"
-            @click="onClickDetails(gun.id)" />
-        </td>
-        <td>{{ gun.type }}</td>
-        <td>{{ gun.placeOfOrigin }}</td>
-        <td>{{ gun.designer }}</td>
-        <td>{{ gun.designed }}</td>
-        <td>{{ gun.cartridge }}</td>
-        <td>{{ gun.muzzleVelocity }}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table>
+      <thead class="table-header">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Image</th>
+          <th>Type</th>
+          <th>Place of Origin</th>
+          <th>Designer</th>
+          <th>Designed</th>
+          <th>Cartridge</th>
+          <th>Muzzle Velocity</th>
+        </tr>
+      </thead>
+      <tbody class="table-body">
+        <tr v-for="gun in guns" :key="gun.id">
+          <td>{{ gun.id }}</td>
+          <td>{{ gun.name }}</td>
+          <td>
+            <img class="table-image" :src="gun.image" :alt="gun.name" data-bs-toggle="modal" data-bs-target="#gunModal"
+              @click="onClickDetails(gun.id)" />
+          </td>
+          <td>{{ gun.type }}</td>
+          <td>{{ gun.placeOfOrigin }}</td>
+          <td>{{ gun.designer }}</td>
+          <td>{{ gun.designed }}</td>
+          <td>{{ gun.cartridge }}</td>
+          <td>{{ gun.muzzleVelocity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <GunModal v-if="selectedGun" :name="selectedGun.name">
     <img :src="selectedGun.image" :alt="selectedGun.name"
-      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 card-image" />
+      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 modal-image" />
     <div v-html="descFormat"></div>
   </GunModal>
 </template>

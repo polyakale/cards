@@ -1,5 +1,5 @@
 <template>
-  <div class="col">
+  <div class="card-container">
     <div class="card">
       <slot name="image"></slot>
       <div class="card-body">

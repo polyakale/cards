@@ -19,16 +19,8 @@
 
 <script>
 export default {
-  props: [
-    "name"
-  ],
+  props: ["name"],
 };
 </script>
 
-<style scoped>
-.modal-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-</style>
+<style scoped></style>

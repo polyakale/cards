@@ -1,6 +1,6 @@
 .the-title {
-    font-weight: bold;
     text-align: center;
+    font-weight: bold;
 }
 h2 {
     font-weight: bold !important;
@@ -17,13 +17,13 @@ span {
 }
 
 .search-label {
-    font-size: 21px;
     font-weight: bold;
+    font-size: 21px;
 }
 
 .my-menu {
-    font-size: 23px;
     font-weight: bold;
+    font-size: 23px;
 }
 a {
     color: rgb(250, 188, 30)!important;
@@ -35,39 +35,74 @@ a:hover {
 
 
 input {
-    margin-left: 4px !important;
     border: 3px inset goldenrod !important;
     background: gray!important;
+    margin-left: 4px !important;
 }
 
 .my-border {
-    margin: 12px 0;
     border-left: none!important;
     border: 3px groove navy;
     background: gray;
+    margin: 12px 0;
 }
 
-.my-modal {
-    
+.description {
+    font-family: 'Courier New', monospace;
+    border: none; 
+    padding: 0;
+    margin: 0; 
 }
 
+/* Modal */
+.modal-dialog {
+    margin: 0 auto;
+    max-width: 90%;
+}
+.modal-content {
+    background: rgb(182, 169, 148)!important;
+    font-family: 'Courier New', monospace;
+    border-radius: 10px; 
+    width: 100%;
+}
+.modal-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.modal-image {
+    margin-bottom: 10px;
+    max-width: 100%;
+    height: auto; 
+}
+.modal-body {
+    flex-direction: column; 
+    align-items: center; 
+    display: flex;
+}
+.modal-header, .modal-footer {
+    border-color: rgb(108, 91, 62) !important;
+}
+.modal-footer {
+    border-top: 1px solid rgb(108, 91, 62)!important;
+}
 /* Table */
 table {
-    width: 100%;
-    border-collapse: collapse;
     background: rgb(202, 189, 166);
+    border-collapse: collapse;
+    width: 100%;
 }
 table,
 th,
 td {
-    padding: 15px;
-    text-align: center;
     border: 2px solid black!important;
+    text-align: center;
+    padding: 15px;
 }
 th,
 td {
-    padding: 10px;
     text-align: center;
+    padding: 10px;
 }
 .table-header {
     font-family: 'Courier New';
@@ -79,9 +114,9 @@ td {
     font-size: 18px;
 }
 .table-image {
+    transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
     height: 140px;
     width: 250px;
-    transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
 }
 .table-image:hover {
     outline: 4px solid rgba(0, 0, 0, 0.719);
@@ -94,6 +129,24 @@ td {
     outline: 4px solid transparent;
     opacity: 1;
 }
+.table-responsive {
+    max-height: 76vh;
+    overflow-y: auto;
+}
+.table-responsive::-webkit-scrollbar {
+    width: 12px;
+}
+.table-responsive::-webkit-scrollbar-track {
+    background: #6c5b3e9f;
+    border-radius: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb {
+    background: #463b289f;
+    border-radius: 6px;
+}
+.table-responsive::-webkit-scrollbar-thumb:hover {
+    background: #463b28c7;
+}  
 /* Card */
 .card {
     transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
@@ -101,13 +154,14 @@ td {
     font-family: 'Courier New', monospace;
     background: black!important;
     color: white !important;
-    display: flex;
-    width: 300px;
+    flex: 1 1 calc(25% - 20px);
+    margin: 10px;
+    box-sizing: border-box; 
 }
 .card:hover {
     border: 4px double rgba(224, 191, 0, 0.63)!important;
     outline: 5px solid rgba(0, 0, 0, 0.295);
-    transform: translateY(-4px);
+    transform: translateY(3px);
     color: yellow!important;
     opacity: 0.8;
 }
@@ -116,17 +170,88 @@ td {
     outline: 5px solid transparent;
     opacity: 1;
 }
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: flex-start;
+}
 .card-image {
     height: 170px;
     width: 100%;
 }
-/* Responsive Design (Example) */
+.card-responsive {
+    overflow-x: hidden;
+    max-height: 76vh;
+    overflow-y: auto;
+}
+.card-responsive::-webkit-scrollbar {
+    width: 12px;
+}
+.card-responsive::-webkit-scrollbar-track {
+    border: 1px solid #5c4e00;
+    background: #a29580;
+    border-radius: 5px;
+}
+.card-responsive::-webkit-scrollbar-thumb {
+    border: 1px solid #0730b8;
+    background: #766956;
+    border-radius: 6px;
+}
+.card-responsive::-webkit-scrollbar-thumb:hover {
+    background: #5c5240c7;
+}  
+/* Rant about guns (for Home) */
+.rant {
+    text-shadow: 0 0 2px #c0c0c0, 0 0 5px #ffdcdc;
+    font-family: 'Courier New', Courier, monospace; 
+    background-image: url("/public/home-bg.png");
+    background-position: center;
+    background-size: cover;
+    border: 1px solid;
+    font-weight: bold;
+    margin-top: 20px;
+    font-size: 18px;
+    padding: 15px;
+}
+.rant h2 {
+    color: #006909;
+}
+.rant p {
+    color: #000000;
+    line-height: 1.6;
+}
+/* Responsive Design */
 @media (max-width: 768px) {
     .card {
-        width: 100%; /* Make cards full width on smaller screens */
+        width: 100%;
+        margin: 10px 0;
+    }
+    .card-container {
+        flex-direction: column;
     }
 
     .table-image {
-        width: 100%; /* Adjust table images to be responsive */
+        width: 100%;
+    }
+}
+@media (max-width: 1024px) {
+    .card {
+        flex: 1 1 calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .card {
+        flex: 1 1 calc(50% - 20px);
+    }
+    .modal-dialog {
+        max-width: 95%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        flex: 1 1 100%;
     }
 }
