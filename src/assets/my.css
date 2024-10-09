@@ -37,7 +37,7 @@ input {
 
 .my-border {
     margin-top: 12px;
-    border-left: none;
+    border-left: none !important;
     border: 3px groove navy;
 }
 
@@ -46,5 +46,5 @@ th,
 td {
     padding: 15px;
     text-align: center;
-    border: 1px solid!important;
+    border: 1px solid !important;
 }
