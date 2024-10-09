@@ -15,12 +15,7 @@ export default {};
       <!-- Search -->
       <div class="d-flex align-items-center" role="search">
         <label class="search-label form-label text-nowrap m-0">Searcher: </label>
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
         <button class="btn btn-success" type="submit">Search</button>
       </div>
     </nav>
@@ -31,5 +26,4 @@ export default {};
   </div>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>

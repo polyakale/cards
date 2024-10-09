@@ -1,33 +1,31 @@
+.the-title {
+    font-weight: bold;
+    text-align: center;
+}
+
 .bg {
     background: rgb(158, 158, 158);
 }
 
+h2 {
+    font-weight: bold !important;
+}
 .my-text {
     font-family: Georgia;
 }
-
-.the-title {
-    font-weight: bold;
-    text-align: center;
+span {
+    font-size: 18px;
 }
 
 .search-label {
     font-size: 21px;
     font-weight: bold;
 }
-
 .my-menu {
     font-size: 23px;
     font-weight: bold;
 }
 
-h2 {
-    font-weight: bold !important;
-}
-
-span {
-    font-size: 18px;
-}
 
 input {
     margin-left: 4px !important;
@@ -40,7 +38,11 @@ input {
     border-left: none !important;
     border: 3px groove navy;
 }
-
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
 table,
 th,
 td {
@@ -48,3 +50,24 @@ td {
     text-align: center;
     border: 1px solid !important;
 }
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+.table-header {
+    font-family: 'Courier New';
+    font-size: 20px;
+    
+}
+.table-body {
+    font-family: 'Courier New';
+    font-size: 18px;
+}
+.table-image {
+    max-height: 125px;
+    max-width: 280px;
+    display: block;
+    margin: 0 auto;
+}
+
