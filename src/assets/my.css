@@ -4,6 +4,7 @@
 }
 h2 {
     font-weight: bold !important;
+    padding: 0 4px 0 3px;
 }
 .my-text {
     font-family: Georgia;
@@ -13,7 +14,7 @@ span {
 }
 
 .bg {
-    background: rgb(158, 158, 158);
+    background: rgb(148, 123, 90);
 }
 
 .search-label {
@@ -36,39 +37,44 @@ a:hover {
 
 input {
     border: 3px inset goldenrod !important;
-    background: gray!important;
+    background: rgb(102, 85, 62)!important;
     margin-left: 4px !important;
+    color: rgb(204, 204, 204)!important;
 }
 
 .my-border {
     border-left: none!important;
     border: 3px groove navy;
-    background: gray;
+    background: rgb(102, 85, 62);
     margin: 12px 0;
 }
 
 /* Modal */
-.modal-dialog {
-    margin: 0 auto;
-    max-width: 90%;
-}
 .modal-content {
-    background: rgb(182, 169, 148)!important;
+    background: rgb(121, 105, 81)!important;
     font-family: 'Courier New', monospace;
 }
-.modal-content-wrapper {
-    display: flex;
-    align-items: center;
-}
 .modal-image {
-    margin-bottom: 10px;
-    margin-right: 15px;
-    max-width: 100%;
-    height: auto;
+    border: 3px groove rgb(56, 47, 30);
+    padding: none !important;
+    width: 240px!important;
+    margin-left: 8px;
+    margin-top: 7px;
+    margin-right: 5px;
+    height: 135px;
 }
 .modal-body { 
-    align-items: center; 
-    display: flex;
+    align-items: flex-start; 
+    padding: 1px!important;
+}
+.modal-body p { 
+    text-shadow: 0 2px #c5c5c5;
+    color: rgb(160, 146, 131);
+    padding: 1px!important;
+    margin: 2px;
+}
+.modal-header{
+    padding: 10px !important;
 }
 .modal-header, .modal-footer {
     border-color: rgb(108, 91, 62) !important;
@@ -128,11 +134,11 @@ td {
 }
 .table-responsive::-webkit-scrollbar-track {
     background: #6c5b3e9f;
-    border-radius: 6px;
+    border: 0.5px solid #0000009f;
 }
 .table-responsive::-webkit-scrollbar-thumb {
     background: #463b289f;
-    border-radius: 6px;
+    border: 1px solid #0000009f;
 }
 .table-responsive::-webkit-scrollbar-thumb:hover {
     background: #463b28c7;
@@ -140,13 +146,12 @@ td {
 /* Card */
 .card {
     transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
-    border: 4px groove goldenrod!important;
+    border: 4px groove rgb(49, 43, 26)!important;
     font-family: 'Courier New', monospace;
-    background: black!important;
+    background: rgb(56, 47, 33)!important;
     color: white !important;
     flex: 1 1 calc(25% - 20px);
     margin: 10px;
-    box-sizing: border-box; 
 }
 .card:hover {
     border: 4px double rgba(224, 191, 0, 0.63)!important;
@@ -179,17 +184,21 @@ td {
 }
 .card-responsive::-webkit-scrollbar-track {
     border: 1px solid #5c4e00;
-    background: #a29580;
-    border-radius: 5px;
+    background: #6e6453;
+    border-radius: 6px;
 }
 .card-responsive::-webkit-scrollbar-thumb {
-    border: 1px solid #0730b8;
-    background: #766956;
+    border: 1px solid #4b442f;
+    background: #4d463d;
     border-radius: 6px;
 }
 .card-responsive::-webkit-scrollbar-thumb:hover {
-    background: #5c5240c7;
+    background: #524836c7;
 }  
+/* Button */
+.details-button {
+    
+}
 /* Rant about guns (for Home) */
 .rant {
     text-shadow: 0 0 2px #c0c0c0, 0 0 5px #ffdcdc;
@@ -203,6 +212,25 @@ td {
     font-size: 18px;
     padding: 15px;
 }
+.rant-responsive {
+    overflow-x: hidden;
+    max-height: 68vh;
+    overflow-y: auto;
+}
+.rant-responsive::-webkit-scrollbar {
+    width: 12px;
+}
+.rant-responsive::-webkit-scrollbar-track {
+    border: 1px solid #000000;
+    background: #7a7a7ac7;
+}
+.rant-responsive::-webkit-scrollbar-thumb {
+    border: 1px solid #000000;
+    background: #4f8daa;
+}
+.rant-responsive::-webkit-scrollbar-thumb:hover {
+    background: #276a91c7;
+} 
 .rant h2 {
     color: #006909;
 }

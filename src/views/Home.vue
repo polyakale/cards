@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Home</h2>
-    <section class="rant">
+    <section class="rant rant-responsive">
       <p>
         A gun, by definition, is a ranged weapon designed to discharge projectiles. These firearms have been integral to
         human civilization since their invention, serving various purposes from hunting and sport shooting to personal

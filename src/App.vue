@@ -11,7 +11,7 @@
       <div class="d-flex align-items-center" role="search">
         <label class="search-label form-label text-nowrap m-0">Searcher:</label>
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-success" type="submit">Search</button>
+        <button class="btn btn-success button" type="submit">Search</button>
       </div>
     </nav>
   </div>
