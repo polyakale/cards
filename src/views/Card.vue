@@ -2,7 +2,12 @@
   <h2>Cards</h2>
   <div class="card-responsive">
     <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4 g-4">
-      <GunCard v-for="gun in guns" :key="gun.id" :id="gun.id" @detailsModalHandling="detailsModalHandler">
+      <GunCard
+        v-for="gun in guns"
+        :key="gun.id"
+        :id="gun.id"
+        @detailsModalHandling="detailsModalHandler"
+      >
         <template v-slot:image>
           <img :src="gun.image" :alt="gun.name" class="card-image" />
         </template>
@@ -12,13 +17,11 @@
       </GunCard>
     </div>
 
-    <GunModal :name="selectedGun.name">
-      <div class="modal-content">
-        <img v-if="selectedGun.image" :src="selectedGun.image" :alt="selectedGun.name"
-          class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 modal-image" />
-        <div v-html="descFormat" class="modal-description"></div>
-      </div>
-    </GunModal>
+    <GunModal v-if="selectedGun" :name="selectedGun.name">
+    <img :src="selectedGun.image" :alt="selectedGun.name"
+      class="float-start col-12 col-sm-6 col-lg-4 me-1 p-2 modal-image" />
+    <div v-html="descFormat"></div>
+  </GunModal>
   </div>
 </template>
 

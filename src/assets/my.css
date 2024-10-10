@@ -47,13 +47,6 @@ input {
     margin: 12px 0;
 }
 
-.description {
-    font-family: 'Courier New', monospace;
-    border: none; 
-    padding: 0;
-    margin: 0; 
-}
-
 /* Modal */
 .modal-dialog {
     margin: 0 auto;
@@ -62,21 +55,18 @@ input {
 .modal-content {
     background: rgb(182, 169, 148)!important;
     font-family: 'Courier New', monospace;
-    border-radius: 10px; 
-    width: 100%;
 }
 .modal-content-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
 }
 .modal-image {
     margin-bottom: 10px;
+    margin-right: 15px;
     max-width: 100%;
-    height: auto; 
+    height: auto;
 }
-.modal-body {
-    flex-direction: column; 
+.modal-body { 
     align-items: center; 
     display: flex;
 }
@@ -130,7 +120,7 @@ td {
     opacity: 1;
 }
 .table-responsive {
-    max-height: 76vh;
+    max-height: 69vh;
     overflow-y: auto;
 }
 .table-responsive::-webkit-scrollbar {
@@ -181,7 +171,7 @@ td {
 }
 .card-responsive {
     overflow-x: hidden;
-    max-height: 76vh;
+    max-height: 69vh;
     overflow-y: auto;
 }
 .card-responsive::-webkit-scrollbar {
