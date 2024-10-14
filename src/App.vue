@@ -4,8 +4,8 @@
       <!-- Menu -->
       <div class="my-menu">
         <RouterLink to="/">Home</RouterLink> |
-        <RouterLink to="/gunstable">Guns-Table</RouterLink> |
-        <RouterLink to="/guncards">Cards</RouterLink> |
+        <RouterLink to="/table">Guns-Table</RouterLink> |
+        <RouterLink to="/card">Cards</RouterLink> |
       </div>
       <!-- Search -->
       <div class="d-flex align-items-center" role="search">
