@@ -10,13 +10,13 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/gunstable',
-      name: 'gunstable',
+      path: '/table',
+      name: 'table',
       component: () => import('../views/Table.vue'),
     },
     {
-      path: '/guncards',
-      name: 'guncards',
+      path: '/card',
+      name: 'card',
       component: () => import('../views/Card.vue'),
     }
   ]
