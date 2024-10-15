@@ -32,11 +32,32 @@
 import GunCard from "../components/GunCard.vue";
 import GunModal from "../components/GunModal.vue";
 class Gun {
-  constructor(data) {
-    Object.assign(this, data);
+  constructor({
+    id,
+    image,
+    name,
+    type,
+    placeOfOrigin,
+    designer,
+    designed,
+    cartridge,
+    muzzleVelocity,
+    description,
+  }) {
+    this.id = id;
+    this.image = image;
+    this.name = name;
+    this.type = type;
+    this.placeOfOrigin = placeOfOrigin;
+    this.designer = designer;
+    this.designed = designed;
+    this.cartridge = cartridge;
+    this.muzzleVelocity = muzzleVelocity;
+    this.description = description;
   }
 }
 export default {
+  inject: ["searchedWord"],
   components: {
     GunCard,
     GunModal,

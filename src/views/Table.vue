@@ -16,9 +16,9 @@
         </tr>
       </thead>
       <tbody class="table-body">
-        <tr v-for="gun in guns" :key="gun.id">
+        <tr v-for="gun in filteredGuns" :key="gun.id">
           <td>{{ gun.id }}</td>
-          <td>{{ gun.name }}</td>
+          <td v-html="searchIndicator(gun.name)"></td>
           <td>
             <img
               class="table-image"
@@ -26,7 +26,7 @@
               :alt="gun.name"
               data-bs-toggle="modal"
               data-bs-target="#gunModal"
-              @click="onClickDetails(gun.id)"
+              @click="onClickDetails(gun)"
             />
           </td>
           <td>{{ gun.type }}</td>
@@ -40,19 +40,24 @@
     </table>
   </div>
 
-  <GunModal v-if="selectedGun" :name="selectedGun.name">
+  <GunModal
+    v-if="selectedGun"
+    :name="searchIndicator(selectedGun.name)"
+    @close="selectedGun = null"
+  >
     <img
       :src="selectedGun.image"
       :alt="selectedGun.name"
       class="float-start col-12 col-sm-6 col-lg-4 me-1 modal-image"
     />
-    <div v-html="descFormat"></div>
+    <div v-html="searchIndicator(descFormat)"></div>
   </GunModal>
 </template>
 
 <script>
 import GunModal from "../components/GunModal.vue";
 export default {
+  inject: ["searchedWord"],
   components: {
     GunModal,
   },
@@ -414,13 +419,39 @@ export default {
         ? this.selectedGun.description.map((d) => `<p>${d}</p>`).join("")
         : `<p>No description available</p>`;
     },
+    filteredGuns() {
+      if (!this.searchedWord) {
+        return this.guns;
+      }
+      return this.guns.filter(g => {
+        return g.name.toLowerCase().includes(this.searchedWord.toLowerCase()) ||
+        g.description.some(d => d.toLowerCase().includes(this.searchedWord.toLowerCase()));
+      });
+    },
   },
   methods: {
-    onClickDetails(gunId) {
-      this.selectedGun = this.guns.find((gun) => gun.id === gunId);
+    searchIndicator(text) {
+      if (this.searchedWord) {
+        let what = new RegExp(this.searchedWord, "gi");
+        if (text) {
+          text = text.replace(what, (match) => {
+            return `<span class="mark p-0">${match}</span>`;
+          });
+        }
+        return text;
+      } else {
+        return text;
+      }
+    },
+    onClickDetails(gun) {
+      this.selectedGun = gun;
     },
   },
 };
 </script>
 
-<style></style>
+<style>
+.mark {
+  background: greenyellow;
+}
+</style>

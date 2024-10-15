@@ -1,6 +1,8 @@
 <template>
   <div class="container-fluid">
-    <nav class="my-border p-4 d-flex justify-content-between align-items-center">
+    <nav
+      class="my-border p-4 d-flex justify-content-between align-items-center"
+    >
       <!-- Menu -->
       <div class="my-menu">
         <RouterLink to="/">Home</RouterLink> |
@@ -10,21 +12,67 @@
       <!-- Search -->
       <div class="d-flex align-items-center" role="search">
         <label class="search-label form-label text-nowrap m-0">Searcher:</label>
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-        <button class="btn btn-success button" type="submit">Search</button>
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+          v-model="searchInput"
+          @keypress.enter="submitSearch"
+        />
+        <button
+          class="btn btn-success button"
+          type="button"
+          @click="submitSearch"
+        >
+          Search
+        </button>
       </div>
     </nav>
   </div>
 
   <div class="p-2">
-    <RouterView />
+    <RouterView :searchedWord="searchedWord" />
   </div>
 </template>
 
 <script>
 import { RouterLink, RouterView } from "vue-router";
+import { computed } from "vue";
 
-export default {};
+export default {
+  components: {
+    RouterLink,
+    RouterView,
+  },
+  data() {
+    return {
+      searchedWord: null,
+      searchInput: "",
+    };
+  },
+  provide() {
+    return {
+      searchedWord: computed(() => this.searchedWord),
+    };
+  },
+  watch: {
+    searchInput(data){
+      if (!data) {
+        this.searchedWord = null;
+      } else {
+        this.searchedWord = data;
+      }
+    },
+  },
+  methods: {
+    submitSearch() {
+      if (this.searchInput) {
+        this.searchedWord = this.searchInput;
+      }
+    },
+  },
+};
 </script>
 
 <style scoped></style>
