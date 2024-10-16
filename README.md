@@ -1,5 +1,6 @@
 # Mi a feladat?
-### Általános leírás
+Kreálni egy weboldalat amin egy adatszerkezetből táblázatot és kártyákat csinálunk. 
+## Általános leírás
 ## Milyen technológiát használunk
 - backend,
 - frontend

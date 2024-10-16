@@ -209,7 +209,7 @@ td {
 .rant {
     text-shadow: 0 0 2px #c0c0c0, 0 0 5px #ffdcdc;
     font-family: 'Courier New', Courier, monospace; 
-    background-image: url("/public/home-bg.png");
+    background-image: url("/home-bg.png");
     background-position: center;
     background-size: cover;
     border: 1px solid;

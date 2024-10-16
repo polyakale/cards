@@ -27,10 +27,6 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 export default {
-  components: {
-    RouterLink,
-    RouterView,
-  },
   data() {
     return {
       searchedWord: null,
@@ -41,6 +37,8 @@ export default {
     submitSearch() {
       if (this.searchInput.trim() !== "") {
         this.searchedWord = this.searchInput;
+      } else if(this.searchInput == "") {
+        this.searchedWord = null;
       } else {
         this.searchedWord = null;
       }
