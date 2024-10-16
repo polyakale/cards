@@ -38,17 +38,26 @@ a:hover {
 input {
     border: 3px inset goldenrod !important;
     background: rgb(102, 85, 62)!important;
-    margin-left: 4px !important;
     color: rgb(204, 204, 204)!important;
+    margin-left: 4px !important;
 }
 
 .my-border {
+    background: rgb(102, 85, 62);
     border-left: none!important;
     border: 3px groove navy;
-    background: rgb(102, 85, 62);
     margin: 12px 0;
 }
-
+/* .mark */
+.mark {
+    color: rgb(255, 211, 117)!important;
+    background: #525252!important;
+    font-size: inherit;
+    border-radius: 4px;
+    text-shadow: none; 
+    padding: 0;
+    margin: 0;  
+}
 /* Modal */
 .modal-content {
     background: rgb(121, 105, 81)!important;
@@ -58,9 +67,9 @@ input {
     border: 3px groove rgb(56, 47, 30);
     padding: none !important;
     width: 240px!important;
+    margin-right: 5px;
     margin-left: 8px;
     margin-top: 7px;
-    margin-right: 5px;
     height: 135px;
 }
 .modal-body { 
@@ -133,12 +142,14 @@ td {
     width: 12px;
 }
 .table-responsive::-webkit-scrollbar-track {
+    border: 1px solid #0000009f;
     background: #6c5b3e9f;
-    border: 0.5px solid #0000009f;
+    border-left: none;
 }
 .table-responsive::-webkit-scrollbar-thumb {
-    background: #463b289f;
     border: 1px solid #0000009f;
+    background: #463b289f;
+    border-left: none;
 }
 .table-responsive::-webkit-scrollbar-thumb:hover {
     background: #463b28c7;
@@ -147,10 +158,10 @@ td {
 .card {
     transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
     border: 4px groove rgb(49, 43, 26)!important;
-    font-family: 'Courier New', monospace;
     background: rgb(56, 47, 33)!important;
-    color: white !important;
+    font-family: 'Courier New', monospace;
     flex: 1 1 calc(25% - 20px);
+    color: white !important;
     margin: 10px;
 }
 .card:hover {
@@ -166,9 +177,9 @@ td {
     opacity: 1;
 }
 .card-container {
-    display: flex;
-    flex-wrap: wrap; 
     justify-content: flex-start;
+    flex-wrap: wrap; 
+    display: flex;
 }
 .card-image {
     height: 170px;
@@ -244,7 +255,6 @@ td {
     .card-container {
         flex-direction: column;
     }
-
     .table-image {
         width: 100%;
     }
@@ -254,17 +264,6 @@ td {
         flex: 1 1 calc(33.333% - 20px);
     }
 }
-
-@media (max-width: 768px) {
-    .card {
-        flex: 1 1 calc(50% - 20px);
-    }
-    .modal-dialog {
-        max-width: 95%;
-        margin: 0;
-    }
-}
-
 @media (max-width: 480px) {
     .card {
         flex: 1 1 100%;

@@ -20,44 +20,37 @@
           <td>{{ gun.id }}</td>
           <td v-html="searchIndicator(gun.name)"></td>
           <td>
-            <img
-              class="table-image"
-              :src="gun.image"
-              :alt="gun.name"
-              data-bs-toggle="modal"
-              data-bs-target="#gunModal"
-              @click="onClickDetails(gun)"
-            />
+            <img class="table-image" :src="gun.image" :alt="gun.name" data-bs-toggle="modal" data-bs-target="#gunModal"
+              @click="onClickDetails(gun)" />
           </td>
-          <td>{{ gun.type }}</td>
-          <td>{{ gun.placeOfOrigin }}</td>
-          <td>{{ gun.designer }}</td>
-          <td>{{ gun.designed }}</td>
-          <td>{{ gun.cartridge }}</td>
+          <td v-html="searchIndicator(gun.type)"></td>
+          <td v-html="searchIndicator(gun.placeOfOrigin)"></td>
+          <td v-html="searchIndicator(gun.designer)"></td>
+          <td v-html="searchIndicator(gun.designed)"></td>
+          <td v-html="searchIndicator(gun.cartridge)"></td>
           <td>{{ gun.muzzleVelocity }}</td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <GunModal
-    v-if="selectedGun"
-    :name="searchIndicator(selectedGun.name)"
-    @close="selectedGun = null"
-  >
-    <img
-      :src="selectedGun.image"
-      :alt="selectedGun.name"
-      class="float-start col-12 col-sm-6 col-lg-4 me-1 modal-image"
-    />
+  <GunModal v-if="selectedGun" :name="searchIndicator(selectedGun.name)" @close="selectedGun = null">
+    <img :src="selectedGun.image" :alt="selectedGun.name"
+      class="float-start col-12 col-sm-6 col-lg-4 me-1 modal-image" />
     <div v-html="searchIndicator(descFormat)"></div>
   </GunModal>
+
 </template>
 
 <script>
 import GunModal from "../components/GunModal.vue";
 export default {
-  inject: ["searchedWord"],
+  props: {
+    searchedWord: {
+      type: String,
+      default: null
+    }
+  },
   components: {
     GunModal,
   },
@@ -72,7 +65,7 @@ export default {
           type: "Assault rifle",
           placeOfOrigin: "Soviet Union",
           designer: "Mikhail Kalashnikov",
-          designed: 1947,
+          designed: "1947",
           cartridge: "7.62x39mm",
           muzzleVelocity: "715 m/s",
           description: [
@@ -87,7 +80,7 @@ export default {
           type: "Assault rifle",
           placeOfOrigin: "United States",
           designer: "Eugene Stoner",
-          designed: 1956,
+          designed: "1956",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "960 m/s",
           description: [
@@ -102,7 +95,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Austria",
           designer: "Gastonia Glock",
-          designed: 1982,
+          designed: "1982",
           cartridge: "9x19mm",
           muzzleVelocity: "360 m/s",
           description: [
@@ -117,7 +110,7 @@ export default {
           type: "Submachine gun",
           placeOfOrigin: "Germany",
           designer: "Heckler & Koch",
-          designed: 1966,
+          designed: "1966",
           cartridge: "9x19mm",
           muzzleVelocity: "400 m/s",
           description: [
@@ -132,7 +125,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "United States",
           designer: "John Browning",
-          designed: 1911,
+          designed: "1911",
           cartridge: ".45 ACP",
           muzzleVelocity: "250 m/s",
           description: [
@@ -147,7 +140,7 @@ export default {
           type: "Assault rifle",
           placeOfOrigin: "France",
           designer: "Denis Hecker",
-          designed: 1978,
+          designed: "1978",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "920 m/s",
           description: [
@@ -162,7 +155,7 @@ export default {
           type: "Bullpup assault rifle",
           placeOfOrigin: "Israel",
           designer: "Israel Military Industries",
-          designed: 2001,
+          designed: "2001",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "910 m/s",
           description: [
@@ -177,7 +170,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Israel/USA",
           designer: "Magnum Research",
-          designed: 1982,
+          designed: "1982",
           cartridge: ".44 Magnum",
           muzzleVelocity: "440 m/s",
           description: [
@@ -192,7 +185,7 @@ export default {
           type: "Assault rifle",
           placeOfOrigin: "Belgium/USA",
           designer: "FN Herstal",
-          designed: 2004,
+          designed: "2004",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "710 m/s",
           description: [
@@ -207,7 +200,7 @@ export default {
           type: "Bolt-action rifle",
           placeOfOrigin: "United States",
           designer: "Mike Walker",
-          designed: 1962,
+          designed: "1962",
           cartridge: ".308 Winchester",
           muzzleVelocity: "830 m/s",
           description: [
@@ -222,7 +215,7 @@ export default {
           type: "Personal defense weapon",
           placeOfOrigin: "Belgium",
           designer: "FN Herstal",
-          designed: 1990,
+          designed: "1990",
           cartridge: "5.7x28mm",
           muzzleVelocity: "715 m/s",
           description: [
@@ -237,7 +230,7 @@ export default {
           type: "Bolt-action sniper rifle",
           placeOfOrigin: "United Kingdom",
           designer: "Accuracy International",
-          designed: 1982,
+          designed: "1982",
           cartridge: ".338 Lapua Magnum",
           muzzleVelocity: "900 m/s",
           description: [
@@ -252,7 +245,7 @@ export default {
           type: "Light machine gun",
           placeOfOrigin: "Belgium",
           designer: "FN Herstal",
-          designed: 1984,
+          designed: "1984",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "915 m/s",
           description: [
@@ -267,7 +260,7 @@ export default {
           type: "Carbine",
           placeOfOrigin: "United States",
           designer: "Eugene Stoner",
-          designed: 1994,
+          designed: "1994",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "910 m/s",
           description: [
@@ -282,7 +275,7 @@ export default {
           type: "Bullpup assault rifle",
           placeOfOrigin: "Austria",
           designer: "Steyr Mannlicher",
-          designed: 1977,
+          designed: "1977",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "900 m/s",
           description: [
@@ -297,7 +290,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Switzerland",
           designer: "SIG Sauer",
-          designed: 1984,
+          designed: "1984",
           cartridge: "9x19mm",
           muzzleVelocity: "350 m/s",
           description: [
@@ -312,7 +305,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Czech Republic",
           designer: "Josef and František Koucký",
-          designed: 1975,
+          designed: "1975",
           cartridge: "9x19mm",
           muzzleVelocity: "350 m/s",
           description: [
@@ -327,7 +320,7 @@ export default {
           type: "Rifle",
           placeOfOrigin: "United States",
           designer: "William Ruger",
-          designed: 1974,
+          designed: "1974",
           cartridge: "5.56x45mm NATO",
           muzzleVelocity: "975 m/s",
           description: [
@@ -342,7 +335,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Belgium",
           designer: "John Browning",
-          designed: 1935,
+          designed: "1935",
           cartridge: "9x19mm",
           muzzleVelocity: "360 m/s",
           description: [
@@ -357,7 +350,7 @@ export default {
           type: "Shotgun",
           placeOfOrigin: "United States",
           designer: "Mossberg & Sons",
-          designed: 1960,
+          designed: "1960",
           cartridge: "12 gauge",
           muzzleVelocity: "400 m/s",
           description: [
@@ -372,7 +365,7 @@ export default {
           type: "Battle rifle",
           placeOfOrigin: "Belgium",
           designer: "Dieudonné Saive",
-          designed: 1953,
+          designed: "1953",
           cartridge: "7.62x51mm NATO",
           muzzleVelocity: "840 m/s",
           description: [
@@ -387,7 +380,7 @@ export default {
           type: "Pistol",
           placeOfOrigin: "Italy",
           designer: "Beretta",
-          designed: 1975,
+          designed: "1975",
           cartridge: "9x19mm",
           muzzleVelocity: "400 m/s",
           description: [
@@ -402,7 +395,7 @@ export default {
           type: "Bolt-action rifle",
           placeOfOrigin: "Finland",
           designer: "Tikka",
-          designed: 2003,
+          designed: "2003",
           cartridge: ".308 Winchester",
           muzzleVelocity: "830 m/s",
           description: [
@@ -420,12 +413,17 @@ export default {
         : `<p>No description available</p>`;
     },
     filteredGuns() {
-      if (!this.searchedWord) {
-        return this.guns;
-      }
-      return this.guns.filter(g => {
-        return g.name.toLowerCase().includes(this.searchedWord.toLowerCase()) ||
-        g.description.some(d => d.toLowerCase().includes(this.searchedWord.toLowerCase()));
+      const lowerCaseSearch = this.searchedWord?.toLowerCase() || "";
+      return this.guns.filter((g) => {
+        return (
+          g.name.toLowerCase().includes(lowerCaseSearch) ||
+          g.description.some((d) => d.toLowerCase().includes(lowerCaseSearch)) ||
+          g.type.toLowerCase().includes(lowerCaseSearch) ||
+          g.placeOfOrigin.toLowerCase().includes(lowerCaseSearch) ||
+          g.designer.toLowerCase().includes(lowerCaseSearch) ||
+          g.cartridge.toLowerCase().includes(lowerCaseSearch) ||
+          g.muzzleVelocity.toLowerCase().includes(lowerCaseSearch)
+        );
       });
     },
   },
@@ -449,9 +447,3 @@ export default {
   },
 };
 </script>
-
-<style>
-.mark {
-  background: greenyellow;
-}
-</style>
