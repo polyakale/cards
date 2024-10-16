@@ -12,7 +12,7 @@
       </GunCard>
     </div>
 
-    <GunModal v-if="selectedGun" :name="searchIndicator(selectedGun.name)">
+    <GunModal v-if="selectedGun" :name="searchIndicator(selectedGun.name)" @close="selectedGun = null">
       <img :src="selectedGun.image" :alt="selectedGun.name"
         class="float-start col-12 col-sm-6 col-lg-4 me-1 modal-image" />
       <div v-html="descFormat"></div>

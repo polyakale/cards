@@ -50,13 +50,13 @@ input {
 }
 /* .mark */
 .mark {
-    color: rgb(255, 211, 117)!important;
-    background: #525252!important;
+    background: rgb(133, 82, 82)!important;
+    color: rgb(255, 174, 0)!important;
+    text-shadow: 0 2px #2e1b1b;
+    padding: inherit !important;
+    margin: inherit !important;  
     font-size: inherit;
     border-radius: 4px;
-    text-shadow: none; 
-    padding: 0;
-    margin: 0;  
 }
 /* Modal */
 .modal-content {
@@ -77,8 +77,6 @@ input {
     padding: 1px!important;
 }
 .modal-body p { 
-    text-shadow: 0 2px #c5c5c5;
-    color: rgb(160, 146, 131);
     padding: 1px!important;
     margin: 2px;
 }
