@@ -24,7 +24,7 @@
 import GunCard from "../components/GunCard.vue";
 import GunModal from "../components/GunModal.vue";
 class Gun {
-  constructor({id,image,name,type,placeOfOrigin,designer,designed,cartridge,muzzleVelocity,description,}) {
+  constructor({ id, image, name, type, placeOfOrigin, designer, designed, cartridge, muzzleVelocity, description, }) {
     this.id = id;
     this.image = image;
     this.name = name;
@@ -419,12 +419,8 @@ export default {
   },
   methods: {
     detailsModalHandler(gun) {
-      const foundGun = this.guns.find((g) => g.id === gun.id);
-      if (foundGun) {
-        this.selectedGun = new Gun(foundGun);
-      } else {
-        this.selectedGun = new Gun({});
-      }
+      const foundGun = this.guns.find(g => g.id === gun.id);
+      this.selectedGun = foundGun ? new Gun(foundGun) : null;
     },
     searchIndicator(text) {
       if (this.searchedWord) {

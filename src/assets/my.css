@@ -120,7 +120,7 @@ td {
 }
 .table-responsive::-webkit-scrollbar-thumb:hover {
     background: #463b28c7;
-}  
+}
 /* Card */
 .card {
     transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
