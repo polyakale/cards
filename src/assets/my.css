@@ -12,41 +12,8 @@ h2 {
 span {
     font-size: 18px;
 }
-
 .bg {
     background: rgb(148, 123, 90);
-}
-
-.search-label {
-    font-weight: bold;
-    font-size: 21px;
-}
-
-.my-menu {
-    font-weight: bold;
-    font-size: 23px;
-}
-a {
-    color: rgb(250, 188, 30)!important;
-    text-decoration: none!important;
-}
-a:hover {
-    color: rgba(250, 188, 30,.75)!important;
-}
-
-
-input {
-    border: 3px inset goldenrod !important;
-    background: rgb(102, 85, 62)!important;
-    color: rgb(204, 204, 204)!important;
-    margin-left: 4px !important;
-}
-
-.my-border {
-    background: rgb(102, 85, 62);
-    border-left: none!important;
-    border: 3px groove navy;
-    margin: 12px 0;
 }
 /* .mark */
 .mark {
@@ -93,7 +60,7 @@ input {
 table {
     background: rgb(202, 189, 166);
     border-collapse: collapse;
-    width: 100%;
+    height: 100vh;
 }
 table,
 th,
@@ -120,6 +87,8 @@ td {
     transition: transform 0.2s ease-in-out, outline 0.2s, opacity 0.2s;
     height: 140px;
     width: 250px;
+    max-height: 140px;
+    max-width: 250px;
 }
 .table-image:hover {
     outline: 4px solid rgba(0, 0, 0, 0.719);
@@ -185,8 +154,8 @@ td {
 }
 .card-responsive {
     overflow-x: hidden;
-    max-height: 69vh;
     overflow-y: auto;
+    height: 73vh;
 }
 .card-responsive::-webkit-scrollbar {
     width: 12px;
@@ -204,7 +173,6 @@ td {
 .card-responsive::-webkit-scrollbar-thumb:hover {
     background: #524836c7;
 }  
-/* Button */
 /* Rant about guns (for Home) */
 .rant {
     text-shadow: 0 0 2px #c0c0c0, 0 0 5px #ffdcdc;
@@ -243,27 +211,4 @@ td {
 .rant p {
     color: #000000;
     line-height: 1.6;
-}
-/* Responsive Design */
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-        margin: 10px 0;
-    }
-    .card-container {
-        flex-direction: column;
-    }
-    .table-image {
-        width: 100%;
-    }
-}
-@media (max-width: 1024px) {
-    .card {
-        flex: 1 1 calc(33.333% - 20px);
-    }
-}
-@media (max-width: 480px) {
-    .card {
-        flex: 1 1 100%;
-    }
 }

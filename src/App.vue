@@ -1,11 +1,15 @@
 <template>
   <div class="container-fluid">
-    <nav class="my-border p-4 d-flex justify-content-between align-items-center">
+    <nav class="card p-4 d-flex justify-content-between align-items-center">
+      <h1>Guns</h1>
       <!-- Menu -->
-      <div class="my-menu">
-        <RouterLink to="/">Home</RouterLink> |
-        <RouterLink to="/table">Guns-Table</RouterLink> |
-        <RouterLink to="/card">Cards</RouterLink> |
+      <div class="my-menu-container">
+        <div class="my-menu">
+          <RouterLink to="/" class="nav-link">Home</RouterLink>
+          <RouterLink to="/table" class="nav-link">Guns-Table</RouterLink>
+          <RouterLink to="/card" class="nav-link">Cards</RouterLink>
+          <div class="animation"></div>
+        </div>
       </div>
       <!-- Search -->
       <div class="d-flex align-items-center" role="search">
@@ -37,8 +41,6 @@ export default {
     submitSearch() {
       if (this.searchInput.trim() !== "") {
         this.searchedWord = this.searchInput;
-      } else if(this.searchInput == "") {
-        this.searchedWord = null;
       } else {
         this.searchedWord = null;
       }
@@ -47,4 +49,90 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+input {
+  border: 3px inset goldenrod !important;
+  background: rgb(102, 85, 62) !important;
+  color: rgb(204, 204, 204) !important;
+  margin-left: 4px !important;
+}
+.my-menu-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.search-label {
+  font-weight: bold;
+  font-size: 21px;
+}
+.my-menu {
+  font-weight: bold;
+  font-size: 23px;
+  text-align: center;
+  position: relative;
+}
+nav {
+  margin: 27px auto 0;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  background-color: #34495e;
+  border-radius: 8px;
+  font-size: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+nav a {
+  line-height: 50px;
+  height: 100%;
+  font-size: 15px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+}
+/* Specific widths for links */
+.nav-link:nth-child(1) {
+  width: 100px;
+}
+.nav-link:nth-child(2) {
+  width: 110px;
+}
+.nav-link:nth-child(3) {
+  width: 100px;
+}
+/* Animation background */
+nav .animation {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #1abc9c;
+  transition: all 0.5s ease;
+  border-radius: 8px;
+  z-index: 0;
+}
+/* On hover, move the animation background */
+.nav-link:nth-child(1):hover~.animation {
+  width: 100px;
+  left: 0;
+  background-color: #1abc9c;
+}
+.nav-link:nth-child(2):hover~.animation {
+  width: 110px;
+  left: 100px;
+  background-color: #e74c3c;
+}
+.nav-link:nth-child(3):hover~.animation {
+  width: 100px;
+  left: 210px;
+  background-color: #3498db;
+}
+</style>
