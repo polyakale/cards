@@ -53,31 +53,27 @@ export default {
   font-weight: bold;
   font-size: 42px;
 }
-
 input {
-  border: 3px inset goldenrod !important;
   background: rgb(102, 85, 62) !important;
+  border: 3px inset goldenrod !important;
   color: rgb(204, 204, 204) !important;
   margin-left: 4px !important;
 }
-
-.my-menu-container {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  position: relative;
-}
-
 .search-label {
   font-weight: bold;
   font-size: 21px;
 }
-
 .my-menu {
+  position: relative;
+  text-align: center;
   font-weight: bold;
   font-size: 23px;
-  text-align: center;
+}
+.my-menu-container {
+  justify-content: center;
   position: relative;
+  display: flex;
+  flex-grow: 1;
 }
 
 nav {
@@ -91,7 +87,6 @@ nav {
   align-items: center;
   padding: 0 10px 0 10px !important;
 }
-
 nav a {
   line-height: 50px;
   height: 100%;
@@ -102,32 +97,27 @@ nav a {
   text-decoration: none;
   text-transform: uppercase;
   text-align: center;
-  color: white;
+  color: rgb(153, 153, 153);
   cursor: pointer;
 }
-
 /* Specific widths for links */
 .nav-link:nth-child(1) {
   width: 100px;
 }
-
 .nav-link:nth-child(2) {
   width: 110px;
 }
-
 .nav-link:nth-child(3) {
   width: 100px;
 }
-
 /* Animation background */
 nav .animation {
   position: absolute;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #1abc9c;
   transition: all 0.5s ease;
-  border-radius: 8px;
+  border-radius: 55px;
   z-index: 0;
 }
 
@@ -135,18 +125,18 @@ nav .animation {
 .nav-link:nth-child(1):hover~.animation {
   width: 100px;
   left: 0;
-  background-color: #1abc9c;
+  background-color: #815f1a;
 }
 
 .nav-link:nth-child(2):hover~.animation {
   width: 110px;
   left: 100px;
-  background-color: #e74c3c;
+  background-color: #8f8f8f;
 }
 
 .nav-link:nth-child(3):hover~.animation {
   width: 100px;
   left: 210px;
-  background-color: #3498db;
+  background-color: #30729e;
 }
 </style>

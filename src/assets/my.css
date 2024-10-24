@@ -2,6 +2,9 @@
     text-align: center;
     font-weight: bold;
 }
+body {
+    overflow: hidden;
+}
 h2 {
     font-weight: bold !important;
     padding: 0 4px 0 3px;
@@ -60,7 +63,6 @@ span {
 table {
     background: rgb(202, 189, 166);
     border-collapse: collapse;
-    height: 100vh;
 }
 table,
 th,
@@ -102,7 +104,7 @@ td {
     opacity: 1;
 }
 .table-responsive {
-    max-height: 69vh;
+    max-height: 90vh;
     overflow-y: auto;
 }
 .table-responsive::-webkit-scrollbar {
@@ -155,7 +157,7 @@ td {
 .card-responsive {
     overflow-x: hidden;
     overflow-y: auto;
-    height: 73vh;
+    height: 88vh;
 }
 .card-responsive::-webkit-scrollbar {
     width: 12px;
