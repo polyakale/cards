@@ -16,8 +16,6 @@
 
 ## Keresés
 
-## Szűrés
-
 # Adatforrás
 A táblázat funkcióját a következőképpen írhatjuk le:
 - **Oszlopok**: A táblázat oszlopai tartalmazzák a fegyverek nevét, típusát, származási helyét, tervezőjét, gyártási évét, lőszertípusát, csősebességét és leírását.
