@@ -29,6 +29,27 @@
 <script>
 import { RouterLink, RouterView } from "vue-router";
 export default {
+  provide() {
+    return {
+      guns: [
+        {
+          id: 1,
+          image: "AK47.png",
+          name: "AK-47",
+          type: "Assault rifle",
+          placeOfOrigin: "Soviet Union",
+          designer: "Mikhail Kalashnikov",
+          designed: "1947",
+          cartridge: "7.62x39mm",
+          muzzleVelocity: "715 m/s",
+          description: [
+            "The AK-47, officially known as the Avtomat Kalashnikova, is a gas-operated assault rifle that became one of the most widely used firearms in the world. Its design is based on simplicity, reliability, and ease of production, which contributed to its mass adoption by various military forces.",
+            "Renowned for its durability, the AK-47 can function effectively in harsh conditions, including extreme temperatures and dirt. Its 7.62x39mm cartridge offers a good balance between recoil and stopping power, making it a favored choice in many conflicts around the globe.",
+          ],
+        }
+      ],
+    }
+  },
   data() {
     return {
       searchedWord: null,
@@ -53,22 +74,26 @@ export default {
   font-weight: bold;
   font-size: 42px;
 }
+
 input {
   background: rgb(102, 85, 62) !important;
   border: 3px inset goldenrod !important;
   color: rgb(204, 204, 204) !important;
   margin-left: 4px !important;
 }
+
 .search-label {
   font-weight: bold;
   font-size: 21px;
 }
+
 .my-menu {
   position: relative;
   text-align: center;
   font-weight: bold;
   font-size: 23px;
 }
+
 .my-menu-container {
   justify-content: center;
   position: relative;
@@ -87,6 +112,7 @@ nav {
   align-items: center;
   padding: 0 10px 0 10px !important;
 }
+
 nav a {
   line-height: 50px;
   height: 100%;
@@ -100,16 +126,20 @@ nav a {
   color: rgb(153, 153, 153);
   cursor: pointer;
 }
+
 /* Specific widths for links */
 .nav-link:nth-child(1) {
   width: 100px;
 }
+
 .nav-link:nth-child(2) {
   width: 110px;
 }
+
 .nav-link:nth-child(3) {
   width: 100px;
 }
+
 /* Animation background */
 nav .animation {
   position: absolute;

@@ -78,4 +78,5 @@ export default {
 }
 .card-responsive::-webkit-scrollbar-thumb:hover {
     background: #524836c7;
-}  </style>
+} 
+</style>
