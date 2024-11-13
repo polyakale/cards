@@ -2,13 +2,12 @@
   <div class="carousel-container">
     <button class="carousel-arrow left" @click="prevImage">&#10094;</button>
     <div class="image-container">
-      <!-- Image wrapper with sliding effect -->
       <div class="images" :style="getImagesStyle">
         <img 
           v-for="(image, index) in images" 
           :key="index"
           :src="image" 
-          class="carousel-image" 
+          :class="['carousel-image', { active: index === currentIndex }]"
           alt="Carousel image" 
         />
       </div>
@@ -23,7 +22,7 @@ export default {
     return {
       currentIndex: 0,
       images: [
-        '/AK47.png',     // Add your image URLs here
+        '/AK47.png',
         '/favicon.png',
         '/AK47.png',
       ]
@@ -40,8 +39,8 @@ export default {
   computed: {
     getImagesStyle() {
       return {
-        transform: `translateX(-${this.currentIndex * 100}%)`,  // Move the images left/right
-        transition: 'transform 0.5s ease-in-out'  // Smooth transition
+        transform: `translateX(-${this.currentIndex * 100}%)`,
+        transition: 'transform 0.5s ease-in-out'
       };
     }
   }
@@ -54,32 +53,32 @@ export default {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 80%; /* Adjust width as needed */
-  height: 400px; /* Adjust height as needed */
+  width: 80%;
+  height: 400px;
   margin: 0 auto;
 }
 
 .image-container {
   position: relative;
   width: 100%;
-  overflow: hidden; /* Hide images outside the container */
+  overflow: hidden;
 }
 
 .images {
-  display: flex;  /* Layout images horizontally in a row */
+  display: flex;
   width: 100%;
 }
 
 .carousel-image {
-  width: 100%;  /* Each image will take up the full container width */
+  width: 100%;
   height: auto;
   object-fit: cover;
   opacity: 0;
   transition: opacity 0.5s ease-in-out;
 }
 
-.carousel-image:nth-child(n+1) {
-  opacity: 1;  /* Make the first image visible */
+.carousel-image.active {
+  opacity: 1;
 }
 
 .carousel-arrow {

@@ -5,7 +5,7 @@
       <div class="card-body">
         <slot name="name"></slot>
 
-        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#gunModal"
+        <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#nukeModal"
           @click="onClickDetails()">
           Details
         </button>

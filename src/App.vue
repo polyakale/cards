@@ -1,5 +1,5 @@
 <template>
-
+  
   <nav class="p-4 d-flex justify-content-between align-items-center">
     <h1 class="main-title">Guns</h1>
     <!-- Menu -->
@@ -31,7 +31,9 @@ import { RouterLink, RouterView } from "vue-router";
 export default {
   provide() {
     return {
-      guns: [
+      searchedWord: null,
+      searchInput: "",
+      nukes: [
         {
           id: 1,
           image: "AK47.png",
