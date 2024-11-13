@@ -1,12 +1,11 @@
 <template>
-  
   <nav class="p-4 d-flex justify-content-between align-items-center">
-    <h1 class="main-title">Guns</h1>
+    <h1 class="main-title">Nukes</h1>
     <!-- Menu -->
     <div class="my-menu-container">
       <div class="my-menu">
         <RouterLink to="/" class="nav-link">Home</RouterLink>
-        <RouterLink to="/table" class="nav-link">Guns-Table</RouterLink>
+        <RouterLink to="/table" class="nav-link">Nukes-Table</RouterLink>
         <RouterLink to="/card" class="nav-link">Cards</RouterLink>
         <div class="animation"></div>
       </div>
@@ -25,11 +24,11 @@
   </div>
 </template>
 
-
 <script>
 import { RouterLink, RouterView } from "vue-router";
+
 export default {
-  provide() {
+  data() {
     return {
       searchedWord: null,
       searchInput: "",
@@ -50,12 +49,12 @@ export default {
           ],
         }
       ],
-    }
+    };
   },
-  data() {
+  provide() {
     return {
-      searchedWord: null,
-      searchInput: "",
+      nukes: this.nukes,
+      searchedWord: this.searchedWord
     };
   },
   methods: {

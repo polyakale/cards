@@ -48,11 +48,11 @@ export default {
   props: {
     nukes: {
       type: Array,
-      default: () => [], // Provide an empty array if nukes is undefined
+      default: () => [],
     },
     searchedWord: {
       type: String,
-      default: "", // Provide an empty string if searchedWord is undefined
+      default: "",
     },
   },
   components: {
